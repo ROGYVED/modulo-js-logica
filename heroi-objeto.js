@@ -8,15 +8,22 @@ const heroi ={
     inventario: []
 }
 
-const aranha = {
-    nome: "aranha da caverna",
-    vida: 10,
-    dano: 2,
-    chanceVeneno: 0.4,
-    veneno: 4
-}
+// const aranha = {
+//     nome: "aranha da caverna",
+//     vida: 10,
+//     dano: 2,
+//     chanceVeneno: 0.4,
+//     veneno: 4
+// }
 
-coonsole.log(heri.vida)
-heroi.vida = 15;
-heroi = 15; 
-console.log(heroi.vida); //TypeErro:assigment to constant variab
+// coonsole.log(heri.vida)
+// heroi.vida = 15;
+// heroi = 15; 
+// console.log(heroi.vida); //TypeErro:assigment to constant variab
+
+function tomarDano(heroi, dono){
+    heroi.vida = heroi.vida - dano
+    if(heroi.vida <= 0){
+        console.log("Foi ver se no ceu tem pão")
+    }
+}
