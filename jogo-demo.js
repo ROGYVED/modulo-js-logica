@@ -13,6 +13,7 @@ let nome = prompt("Qual é o nome do seu herói? ");
 let vida = 10;
 let veneno = 0;            // quantos passos o veneno ainda dura
 const inventario = [];
+let beber = 1
 
 console.log("");
 console.log(nome + ", o farol da costa apagou. Alguém precisa chegar lá antes do anoitecer.");
@@ -70,12 +71,14 @@ while (jogando) {
     let escolha = prompt("> ");
     if (escolha === "1") {
       local = "vila";
-    } else if (escolha === "2") {
+    } else if (escolha === "2" && beber === 1) {
       vida = vida + 3;
+      beber = beber - 1;
       console.log("A água é gelada. Vida: " + vida);
     } else if (escolha === "3" && inventario.includes("moeda furada")) {
       console.log("A moeda cai sem fazer barulho. Uma corda sobe do fundo do poço, sozinha.");
       inventario.push("corda");
+      inventario.shift("moeda furada")
       console.log("Inventário: " + inventario);
     }
   } else if (local === "ponte") {
